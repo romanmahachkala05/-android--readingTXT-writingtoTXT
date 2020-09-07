@@ -13,11 +13,11 @@ fun main() {
         var dclassnames = listOf<String>()
         
         //lets imagine, we have a file and after reading it line by line we have a list of lines 
-        var filelist = listOf("%SIM1ALL","@G980","abg","gggg","wwwww","*","@G550","ooo","yyy","iiii","*","%SIM2ALL")
+        var filelist = listOf("%SIM1ALL","@G980","abg","gggg","wwwww","$","@G550","ooo","yyy","iiii","$","%SIM2ALL")
         var i = 0
         while (i < filelist.size){
         
-        //i need to separate big headers %
+        //i need to separate big headers with %
             if (filelist.get(i).startsWith("%")) {
                 dclassnames += filelist.get(i).removePrefix("%")
                 dcclassnamescount++
@@ -30,7 +30,7 @@ fun main() {
                 scripttexthelp = emptyList()
                 i++
                 //fill deviceName with scriptText
-                while (filelist.get(i).startsWith("*") == false) {
+                while (filelist.get(i).startsWith("$") == false) {
 					          scripttexthelp += filelist.get(i) 
                     i++
                 } 
