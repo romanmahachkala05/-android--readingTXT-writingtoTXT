@@ -30,7 +30,7 @@ fun main() {
                 scripttexthelp = emptyList()
                 i++
                 //fill deviceName with scriptText
-                while (filelist.get(i).startsWith("$") == false) {
+                while (!filelist.get(i).startsWith("$")) {
 					          scripttexthelp += filelist.get(i) 
                     i++
                 } 
