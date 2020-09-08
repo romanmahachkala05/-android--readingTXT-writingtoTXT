@@ -3,10 +3,8 @@
 	data class dclass1(val deviceName: String = "", val scriptText: String = "")
 
         //i thought its ok
-        var dclasslist1 = listOf<dclass1>()
-        var dclasslist2 = listOf<dclass1>()
-        var dclasslist3 = listOf<dclass1>()
-        var dclasslistArray = arrayOf(dclasslist1, dclasslist2, dclasslist3)
+        val dclasslistArray: MutableList<List<dclass1>> = ArrayList()
+        for (i in 0..9) dclasslistArray.add(ArrayList())
         var dclasscount = 0
         var dcclassnamescount = 0
         var devicenamehelp = ""
@@ -53,7 +51,7 @@
 
                     }
 
-                }
+                } else Toast.makeText(this, "Файл не был найден", Toast.LENGTH_SHORT).show()
 
 
 
