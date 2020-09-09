@@ -20,22 +20,22 @@
 
 				    //i need to separate big headers with %
 			     if (txtfileList.get(i).startsWith("%")) {
-				dclassnames += txtfileList.get(i).removePrefix("%")
+				dclassnames += txtfileList[i].removePrefix("%")
 				dcclassnamescount++
 				if (dcclassnamescount > 1) dclasscount++
 			     }
 
 			     //separate smaller headers (deviceName in data class) with @
-			     if (txtfileList.get(i).startsWith("@")) {
-				  headerSmallH = txtfileList.get(i)
+			     if (txtfileList[i].startsWith("@")) {
+				  headerSmallH = txtfileList[i]
 				  headerSmallTextH = emptyList()
 				  i++
 				  //fill headerSmall with headerSmallText
-				  while (!txtfileList.get(i).startsWith("$")) {
-					headerSmallTextH += txtfileList.get(i)
+				  while (!txtfileList[i].startsWith("$")) {
+					headerSmallTextH += txtfileList[i]
 					i++
 				  }
-			      dclasslistArray[dclasscount] = dclasslistArray[dclasscount] + dclass1(headerSmallH.toString(), headerSmallTextH.toString().replace(",","").replace(" ","\n"))
+			      dclasslistArray[dclasscount] = dclasslistArray[dclasscount] + dclass1(headerSmallH.toString(), headerSmallTextH.toString())
 			      }
 			 i++      
                          }
@@ -51,7 +51,7 @@
                 val osw = OutputStreamWriter(FileOutputStream(file))
 		
 		//underconstruction
-                osw.write(dclasslistArray[1].get(1).scriptText.replace("[","").replace("]",""))
+                osw.write((dclasslistArray[1])[1].scriptText.replace("[","").replace("]",""))
                 osw.flush()
                 osw.close()
                 Toast.makeText(this, "Script created", Toast.LENGTH_LONG).show()
