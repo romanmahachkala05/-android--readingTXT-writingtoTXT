@@ -51,7 +51,7 @@
                 val osw = OutputStreamWriter(FileOutputStream(file))
 		
 		//underconstruction
-                osw.write((dclasslistArray[1])[1].scriptText.replace("[","").replace("]",""))
+                osw.write((dclasslistArray[1])[1].headerSmallText.replace("[","").replace("]",""))
                 osw.flush()
                 osw.close()
                 Toast.makeText(this, "Script created", Toast.LENGTH_LONG).show()
